@@ -56,7 +56,7 @@ app.layout = html.Div([
             ),
             dbc.Button(
                 "Click to Read the Summary Article",
-                href="https://www.notion.so/your-notion-article-link",  # Replace with your actual Notion link
+                href="https://foggy-hope-121.notion.site/Localization-Tools-Reviews-Analysis-NLP-Project-15168dd6126e80d58e7bce2971854839",
                 target="_blank",  # Opens the link in a new tab
                 color="success",  # Button color
                 style={
