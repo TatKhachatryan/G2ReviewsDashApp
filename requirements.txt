@@ -1,0 +1,7 @@
+dash==2.11.1
+dash_bootstrap_components==1.4.2
+ipython==8.12.3
+pandas==2.2.2
+plotly==5.22.0
+gunicorn==22.0.0
+openpyxl==3.1.5
