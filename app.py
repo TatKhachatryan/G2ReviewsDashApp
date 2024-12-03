@@ -18,7 +18,7 @@ import time
 import re
 from collections import Counter
 
-df = pd.read_csv('https://raw.githubusercontent.com/TatKhachatryan/G2ReviewsDashApp/refs/heads/main/final_data_G2_Reviews.csv')
+data = pd.read_csv('https://raw.githubusercontent.com/TatKhachatryan/G2ReviewsDashApp/refs/heads/main/final_data_G2_Reviews.csv')
 
 data['date'] = pd.to_datetime(data['date'])
 data['year'] = data['date'].dt.year
