@@ -18,6 +18,34 @@ import time
 import re
 from collections import Counter
 
+company_colors = {
+        'Smartcat': '#905fef',
+        'Lokalise': '#fc5608',
+        'Crowdin': '#8c9494',
+        'Phrase Localization Platform': '#00eab4',
+        'Murf.ai': '#df3a93',
+        'Transifex': '#076bd1'}
+
+sentiment_class_color_map = {"Positive": "#96D289", "Negative": "#FF7BC4", "Neutral": "#6c757d"}
+sentiment_scNeg_color_map = {"pos_cons": "#96D289", "neg_cons": "#FF7BC4", "neu_cons": "#6c757d"}
+sentiment_scPos_color_map = {"pos_pros": "#96D289", "neg_pros": "#FF7BC4", "neu_pros": "#6c757d"}
+
+ratings_color_map = {
+    0.5: '#ff70bf',
+    1: '#ff7bc4',
+    1.5: '#ff85c8',
+    2: '#ffa8d9',
+    2.5: '#ffcae9',
+    3: '#dbfdd8',
+    3.5: '#cdf5b7',
+    4: '#bbefa9',
+    4.5: '#a9e99b',
+    5: '#96d289'}
+
+def clean_text(text, stopwords):
+    text = re.sub(r'\W+', ' ', text)  # Remove special characters
+    words = text.lower().split()
+    return ' '.join([word for word in words if word not in stopwords])
 data = pd.read_csv('https://raw.githubusercontent.com/TatKhachatryan/G2ReviewsDashApp/refs/heads/main/final_data_G2_Reviews.csv')
 
 data['date'] = pd.to_datetime(data['date'])
@@ -56,7 +84,7 @@ app.layout = html.Div([
             ),
             dbc.Button(
                 "Click to Read the Summary Article",
-                href="https://foggy-hope-121.notion.site/Localization-Tools-Reviews-Analysis-NLP-Project-15168dd6126e80d58e7bce2971854839",
+                href="https://foggy-hope-121.notion.site/Localization-Tools-Reviews-Analysis-NLP-Project-15168dd6126e80d58e7bce2971854839",  # Replace with your actual Notion link
                 target="_blank",  # Opens the link in a new tab
                 color="success",  # Button color
                 style={
