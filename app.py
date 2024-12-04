@@ -452,7 +452,7 @@ def update_graph3(year_slicer, company_dropdown):
     fig_pro, ax_pro = plt.subplots(figsize=(8, 5))
     ax_pro.imshow(pros_wordcloud, interpolation='bilinear')
     ax_pro.axis('off')  # Turn off axis
-    ax_pro.set_title(f"Pros for {company_dropdown}", fontsize=16)  # Title for Pros
+    ax_pro.set_title(f"Frequently occurring words in Pros for {company_dropdown}", fontsize=16)  # Title for Pros
     plt.tight_layout()
 
     # save Pros word cloud image to a BytesIO object
@@ -470,7 +470,7 @@ def update_graph3(year_slicer, company_dropdown):
     fig_cons, ax_cons = plt.subplots(figsize=(8, 5))
     ax_cons.imshow(cons_wordcloud, interpolation='bilinear')
     ax_cons.axis('off')  # Turn off axis
-    ax_cons.set_title(f"Cons for {company_dropdown}", fontsize=16)  # Title for Cons
+    ax_cons.set_title(f"Frequently occurring words in Cons for {company_dropdown}", fontsize=16)  # Title for Cons
     plt.tight_layout()
 
     # save Cons word cloud image to a BytesIO object
