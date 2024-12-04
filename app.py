@@ -69,7 +69,7 @@ app.layout = html.Div([
         'borderBottom': '1px solid #ffffff',
         'margin': '20px'
     }),
-    html.H1("Translation Tools Analysis Dashboard", style={"text-align": "center", "margin": "auto"}),
+    html.H1("Localization Tools Analysis Dashboard", style={"text-align": "center", "margin": "auto"}),
     html.Div(style={
         'borderBottom': '1px solid #ffffff',
         'margin': '20px'
