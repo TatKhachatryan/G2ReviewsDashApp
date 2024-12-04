@@ -46,14 +46,20 @@ def clean_text(text, stopwords):
     text = re.sub(r'\W+', ' ', text)  # Remove special characters
     words = text.lower().split()
     return ' '.join([word for word in words if word not in stopwords])
+        
 data = pd.read_csv('https://raw.githubusercontent.com/TatKhachatryan/G2ReviewsDashApp/refs/heads/main/final_data_G2_Reviews.csv')
 
 data['date'] = pd.to_datetime(data['date'])
 data['year'] = data['date'].dt.year
 unique_products = data['product_name'].unique()
+
 external_stylesheets = [dbc.themes.PULSE]
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
+
+app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
+                meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}])
+
 server = app.server
+
 app.title = 'Translation Tools Analysis Dashboard'
 
 app.layout = html.Div([
