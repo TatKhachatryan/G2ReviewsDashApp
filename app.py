@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+np.Inf = np.inf
 import plotly.express as px
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
