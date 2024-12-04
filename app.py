@@ -429,12 +429,10 @@ def toggle_sentiment_plots(toggle_value, year_slicer, company_dropdown):
 @app.callback(
     Output('wordcloud-pro', 'src'),
     Output('wordcloud-cons', 'src'),
-    Input('wordcloud-pro', 'id'),
-    Input('wordcloud-cons', 'id'),
     Input('year-slicer', 'value'),
     Input('company-dropdown2', 'value')
 )
-def update_graph2(year_slicer, company_dropdown):
+def update_graph3(year_slicer, company_dropdown):
     df = data[(data['product_name'] == company_dropdown) &
               (data['date'].dt.year >= year_slicer[0]) & (data['date'].dt.year <= year_slicer[1])]
 
