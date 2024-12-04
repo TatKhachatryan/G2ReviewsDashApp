@@ -438,8 +438,8 @@ def update_graph3(year_slicer, company_dropdown):
 
     # clean text for word clouds
     words_to_remove = ["translate", "translator", "translators", "translation", "translations", company_dropdown]
-    df['Cleaned_Pros'] = df['processed_Pros_NLTK'].apply(lambda x: clean_text(x, words_to_remove))
-    df['Cleaned_Cons'] = df['processed_Cons_NLTK'].apply(lambda x: clean_text(x, words_to_remove))
+    df.loc[:, 'Cleaned_Pros'] = df['processed_Pros_NLTK'].apply(lambda x: clean_text(x, words_to_remove))
+    df.loc[:, 'Cleaned_Cons'] = df['processed_Cons_NLTK'].apply(lambda x: clean_text(x, words_to_remove))
 
     # generate "Pros" word cloud
     pros_text = ' '.join(df['Cleaned_Pros'].dropna())
