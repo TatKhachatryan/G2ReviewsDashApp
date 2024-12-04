@@ -60,7 +60,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets,
 
 server = app.server
 
-app.title = 'Translation Tools Analysis Dashboard'
+app.title = 'Localization Tools Analysis Dashboard'
 
 app.layout = html.Div([
     html.Div(style={
@@ -429,6 +429,8 @@ def toggle_sentiment_plots(toggle_value, year_slicer, company_dropdown):
 @app.callback(
     Output('wordcloud-pro', 'src'),
     Output('wordcloud-cons', 'src'),
+    Input('wordcloud-pro', 'id'),
+    Input('wordcloud-cons', 'id'),
     Input('year-slicer', 'value'),
     Input('company-dropdown2', 'value')
 )
