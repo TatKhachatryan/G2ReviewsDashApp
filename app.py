@@ -374,13 +374,13 @@ def toggle_sentiment_plots(toggle_value, year_slicer, company_dropdown):
 
     # generate sentiment score plots
     elif toggle_value == 'scores':
-        sentiment_melted_pros = data.melt(
+        sentiment_melted_pros = df.melt(
             id_vars=['product_name'],
             value_vars=['pos_pros', 'neg_pros', 'neu_pros'],
             var_name='Sentiment',
             value_name='Score'
         )
-        sentiment_melted_cons = data.melt(
+        sentiment_melted_cons = df.melt(
             id_vars=['product_name'],
             value_vars=['pos_cons', 'neg_cons', 'neu_cons'],
             var_name='Sentiment',
